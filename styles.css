@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hidden {
+    display: none;
+}
+
+/* Additional styles */
+body {
+    background-image: url('quiz_background_light.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    animation: fadeIn 1s ease-in-out;
+    transition: background-color 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.welcome-btn {
+    background-color: #f3f4f6;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background-color: #121212;
+    background-image: url('quiz_background_dark.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.dark .text-white {
+    color: #e0e0e0;
+}
+
+body.dark .text-navy {
+    color: #e0e0e0;
+}
+
+body.dark .bg-gray-100 {
+    background-color: #1e1e1e;
+}
+
+body.dark .bg-white {
+    background-color: #2e2e2e;
+}
+
+body.dark .text-gray-700 {
+    color: #e0e0e0;
+}
+
+body.dark .shadow {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background-color: lightgray;
+    color: navy;
+}
+
+body.dark #theme-toggle {
+    background-color: gray;
+    color: white;
+}
