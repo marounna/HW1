@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz System</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-7Q8s3Ihr.css">
+</head>
+
+<body  class=" bg-gray-100 font-sans leading-normal tracking-normal">
+  
+    <div class="container mx-auto">
+        <!-- Theme Toggle Button -->
+        <div class="absolute top-0 right-0 m-4">
+            <button id="theme-toggle" onclick="toggleTheme()" class="bg-gray-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg">
+                Dark
+            </button>
+        </div>
+        <!-- Main Menu -->
+        <div id="main-menu" class="text-center text-navy mt-5">
+          
+          <div class="bg-white/[0.3] p-4 rounded shadow-lg mb-4 hidden">
+            <h3 class="text-xl font-bold mb-2">Quiz Title</h3>
+            <p class="mb-2">quiz.description bla bla bla bla <br/> ba bla bla</p>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Play</button>
+            </div>
+
+
+            <h1 class="text-4xl mb-10">Welcome to the Online Quiz System</h1>
+            <div class="flex flex-col items-center">
+                <button onclick="showPlayQuizzes()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg mb-4">
+                    Play Quizzes
+                </button>
+                <button onclick="showCreateQuizMenu()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg">
+                    Create Quiz
+                </button>
+            </div>
+        </div>
+
+        <!-- Play Quizzes -->
+        <div id="play-quizzes" class="hidden text-center">
+            <h2 class="text-3xl mb-5">Select a Quiz to Play</h2>
+            <div id="quiz-list" class="space-y-4">
+                <!-- Quizzes will be dynamically inserted here -->
+            </div>
+            <button onclick="showMainMenu()" class="mt-5 bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg">
+                Back
+            </button>
+        </div>
+
+        <!-- Create Quiz Menu -->
+        <div id="create-quiz-menu" class=" hidden text-center">
+            <h2 class="text-3xl mb-5">Create or Edit a Quiz</h2>
+            <div class="flex flex-col items-center">
+                <button onclick="showNewQuizForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg mb-4">
+                    Add New Quiz
+                </button>
+                <button onclick="showEditQuizList()" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg">
+                    Edit Existing Quiz
+                </button>
+                <button onclick="showMainMenu()" class="mt-5 bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg">
+                    Back
+                </button>
+            </div>
+        </div>
+
+        <!-- New Quiz Form -->
+        <div id="new-quiz-form" class="overflow-auto hidden max-h-screen">
+            <h2 class="text-3xl mb-5">Create a New Quiz</h2>
+            <form id="quiz-form">
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2" for="quiz-title">
+                        Quiz Title
+                    </label>
+                    <input class="shadow appearance-none border rounded w-1/4 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="quiz-title" type="text" placeholder="Enter quiz title">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2" for="quiz-description">
+                        Quiz Description
+                    </label>
+                    <textarea class="shadow appearance-none border rounded w-1/2 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="quiz-description" placeholder="Enter quiz description"></textarea>
+                </div>
+
+                <div id="questions-list" class="mb-4">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+
+                <div class="mb-4 flex flex-col items-center">
+                  <button type="button" onclick="addQuestion()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg mb-10">
+                      Add Question
+                  </button>
+                  <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg">
+                    Save Quiz
+                </button>
+              </div>
+
+            </form>
+            <button onclick="showCreateQuizMenu()" class="flex justify-end mt-5 bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg">
+                Back
+            </button>
+        </div>
+
+        <!-- Edit Quiz List -->
+        <div id="edit-quiz-list" class="hidden text-center">
+            <h2 class="text-3xl mb-5">Select a Quiz to Edit</h2>
+            <div id="edit-quiz-list-content" class="space-y-4">
+                <!-- Quizzes will be dynamically inserted here -->
+            </div>
+            <button onclick="showCreateQuizMenu()" class="mt-5 bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg">
+                Back
+            </button>
+        </div>
+    </div>
+<!-- Maroun trick to make styles work with js calls -->
+<div id="all-the-used-styles" class="bg-white/[0.2] bg-white/[0.4] bg-white/[0.3] hidden flex justify-end w-1/2 appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline">
+    <script src="/scripts.js"></script>
+</body>
+
+</html>
